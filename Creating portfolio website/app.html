@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="Data/images/zaul.jpg" type="image/x-icon">
+  </head>
+  <body>
+    <div class="button-box">
+      <button onclick="openFile('Data/nav-scripts/contact.html')">
+        Contact
+      </button>
+      <button onclick="openFile('Data/nav-scripts/about.html')">About</button>
+      <button onclick="openFile('Data/nav-scripts/forums.html')">Forums</button>
+    </div>
+
+    <iframe id="viewer" src="" title="File Viewer"></iframe>
+
+    <script>
+      function openFile(filePath) {
+        document.getElementById("viewer").src = filePath;
+      }
+    </script>
+    <script src="app.js"></script>
+  </body>
+</html>
