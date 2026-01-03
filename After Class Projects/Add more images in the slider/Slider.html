@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel</title>
+</head>
+<body>
+    <h1>Carousel</h1>
+    <p>This is a simple carousel implementation.</p>
+
+    <div class="carousel">
+        <div class="carousel-item active">
+            <img src="flower1.jpeg" alt="Image 1">
+        </div>
+        <div class="carousel-item">
+            <img src="flower5.jpeg" alt="Image 2">
+        </div>
+        <div class="carousel-item">
+            <img src="Flower2.jpeg" alt="Image 3">
+        </div>
+        <div class="carousel-item">
+            <img src="Flower3.jpeg"Image 3">
+        </div>
+        <div class="carousel-item">
+            <img src="Flower4.jpeg" alt="Image 3">
+        </div>
+        
+    </div>
+
+    <button class="prev">Previous</button>
+    <button class="next">Next</button>
+
+    <script>
+        const items = document.querySelectorAll('.carousel-item');
+        let currentIndex = 0;
+
+        function showItem(index) {
+            items.forEach((item, i) => {
+                item.style.display = i === index ? 'block' : 'none';
+            });
+        }
+
+        document.querySelector('.next').addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % items.length;
+            showItem(currentIndex);
+        });
+
+        document.querySelector('.prev').addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + items.length) % items.length;
+            showItem(currentIndex);
+        });
+
+        // Initialize the first item
+        showItem(currentIndex);
+    </script>
+    
+</body>
+</html>
